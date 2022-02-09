@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Game</title>
+	<style>
+		html,body {
+			margin: 0;
+			padding: 0;
+			background: rgba(0, 0, 0, 1);
+			height: 100%;
+		}
+		.score {
+			position: fixed;
+			top: 10px;
+			left: 10px;
+			font-size: 20px;
+			color: white;
+			user-select: none;
+		}
+		.score__number {
+			margin-left: 10px;
+		}
+		.menu {
+			position: fixed;
+			top: 50%;
+			z-index: 10;
+			left: 0;
+			width: 100%;
+			transform: translate(0,-50%);
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+		.menu__body{
+			background: white;
+			border-radius: 10px;
+			width: 100%;
+			max-width: 500px;
+			text-align: center;
+			padding-bottom: 30px;
+		}
+		.menu__score{
+			font-size: 50px;
+			font-family: 'Montserrat', sans-serif;
+			margin-bottom: 10px;
+			margin-top: 15px;
+		}
+		.menu__text{
+			font-size: 20px;
+			color: rgba(0, 0, 0, .6);
+			margin-bottom: 10px;
+		}
+		.menu__btn{
+			background:	rgba(0,191,255,0.7);
+			border: none;
+			cursor: pointer;
+			color: white;
+			font-size: 25px;
+			border-radius: 10px;
+			padding: 10px 30% 10px;
+		}
+		.shop__btn:hover,.menu__btn:hover{
+			background:	rgba(0,191,255,0.5);
+		}
+		.shop__btn:active,.menu__btn:active{
+			background:	rgba(0,191,255,0.1);
+		}
+		.shop__icon{
+			position: fixed;
+			top: 10px;
+			right: 10px;
+			user-select: none;
+			display: none;
+		}
+		.shop__btn{
+			padding: 10px 10px;
+			background:	rgba(0,191,255,0.7);
+			border-radius: 10px;
+			border: none;
+			cursor: pointer;
+			color: white;
+		}
+		.shop__goods {
+			position: fixed;
+			top: 10px;
+			right: 10%;
+			display: none;	
+			text-align: center;
+			font-size: 20px;
+			color: white;
+		}
+		.shop__goods < div{
+			margin-right:10px ;
+		}
+		.shop__button{
+			padding: 5px 10px;
+		}
+	</style>
+</head>
+<body>
+	<canvas class="game"></canvas>
+	<div class="score"><span>Score:</span><span class="score__number">0</span></div>
+	<div class="menu" id="moduleEl">
+		<div class = "menu__body" >
+			<h1 class="menu__score">
+				0
+			</h1>
+			<div class="menu__text">
+				Points
+			</div>
+			<div class="menu__button">
+				<button class="menu__btn" id="startGameElBtn">
+					Start game
+				</button>
+			</div>
+		</div>
+	</div>
+	<div class="shop__icon">
+		<button class="shop__btn" >
+			Shop
+		</button>
+	</div>
+	<div class="shop__goods">
+		<div class="shop__speedProjectile">
+			<button class="shop__button">
+				Speed projectile
+			</button>
+			<div class="shop__price">1000</div>
+		</div>
+		<div class="shop__megaBoom">
+			<button class="shop__button">
+				Kill all enemies
+			</button>
+			<div class="shop__price">3000</div>
+		</div>
+	</div>
+	<script src="main.js"></script>
+</body>
+</html>
